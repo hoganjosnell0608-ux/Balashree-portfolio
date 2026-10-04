@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Bala Shree M — UI/UX Designer &amp; Product Thinker</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "space-dark": "#060a16",
+          "surface": "#0a1124",
+          "surface-card": "#121a30",
+          "surface-high": "#1b2542",
+          "primary": "#c084fc",
+          "accent-cyan": "#38bdf8",
+          "accent-emerald": "#34d399",
+          "accent-purple": "#a855f7"
+        },
+        fontFamily: {
+          sans: ["Plus Jakarta Sans", "system-ui", "sans-serif"],
+          mono: ["JetBrains Mono", "monospace"]
+        },
+        animation: {
+          'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          'radar-ping': 'radarPulse 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+          'float-subtle': 'floatGentle 6s ease-in-out infinite alternate',
+          'glow-shift': 'glowShift 8s ease-in-out infinite alternate'
+        },
+        keyframes: {
+          radarPulse: {
+            '0%': { transform: 'scale(0.95)', opacity: '0.8' },
+            '70%': { transform: 'scale(2.2)', opacity: '0' },
+            '100%': { transform: 'scale(2.4)', opacity: '0' }
+          },
+          floatGentle: {
+            '0%, 100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(-8px)' }
+          },
+          glowShift: {
+            '0%': { opacity: '0.45', transform: 'scale(0.98) rotate(0deg)' },
+            '100%': { opacity: '0.7', transform: 'scale(1.08) rotate(5deg)' }
+          }
+        }
+      }
+    }
+  };
+</script>
+<style id="portfolio-dynamic-styles">
+  :root {
+    --motion-speed: 0.9s;
+  }
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: #060a16;
+    color: #e2e8f0;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+  html:not(.dark) body {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+  ::-webkit-scrollbar { display: none; }
+
+  #stardust-canvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 99990;
+  }
+
+  /* 360-Degree Omnidirectional Kinetic Inflow Angles */
+  @keyframes omni-0 { /* 0° Top */
+    0% { opacity: 0; transform: translate3d(0, -75px, 0) scale(0.7) rotate(6deg); filter: blur(7px); }
+    70% { opacity: 1; transform: translate3d(0, 3px, 0) scale(1.04) rotate(-1deg); filter: blur(0px); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1) rotate(0deg); filter: blur(0px); }
+  }
+  @keyframes omni-1 { /* 45° Top-Right */
+    0% { opacity: 0; transform: translate3d(65px, -60px, 0) scale(0.7) rotate(12deg); filter: blur(7px); }
+    70% { opacity: 1; transform: translate3d(-3px, 2px, 0) scale(1.04) rotate(-1deg); filter: blur(0px); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1) rotate(0deg); filter: blur(0px); }
+  }
+  @keyframes omni-2 { /* 90° Right */
+    0% { opacity: 0; transform: translate3d(80px, 0, 0) scale(0.7) rotate(8deg); filter: blur(7px); }
+    70% { opacity: 1; transform: translate3d(-3px, 0, 0) scale(1.04) rotate(-1deg); filter: blur(0px); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1) rotate(0deg); filter: blur(0px); }
+  }
+  @keyframes omni-3 { /* 135° Bottom-Right */
+    0% { opacity: 0; transform: translate3d(65px, 60px, 0) scale(0.7) rotate(10deg); filter: blur(7px); }
+    70% { opacity: 1; transform: translate3d(-2px, -2px, 0) scale(1.04) rotate(-1deg); filter: blur(0px); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1) rotate(0deg); filter: blur(0px); }
+  }
+  @keyframes omni-4 { /* 180° Bottom */
+    0% { opacity: 0; transform: translate3d(0, 75px, 0) scale(0.7) rotate(-6deg); filter: blur(7px); }
+    70% { opacity: 1; transform: translate3d(0, -3px, 0) scale(1.04) rotate(1deg); filter: blur(0px); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1) rotate(0deg); filter: blur(0px); }
+  }
+  @keyframes omni-5 { /* 225° Bottom-Left */
+    0% { opacity: 0; transform: translate3d(-65px, 60px, 0) scale(0.7) rotate(-10deg); filter: blur(7px); }
+    70% { opacity: 1; transform: translate3d(2px, -2px, 0) scale(1.04) rotate(1deg); filter: blur(0px); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1) rotate(0deg); filter: blur(0px); }
+  }
+  @keyframes omni-6 { /* 270° Left */
+    0% { opacity: 0; transform: translate3d(-80px, 0, 0) scale(0.7) rotate(-8deg); filter: blur(7px); }
+    70% { opacity: 1; transform: translate3d(3px, 0, 0) scale(1.04) rotate(1deg); filter: blur(0px); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1) rotate(0deg); filter: blur(0px); }
+  }
+  @keyframes omni-7 { /* 315° Top-Left */
+    0% { opacity: 0; transform: translate3d(-65px, -60px, 0) scale(0.7) rotate(-12deg); filter: blur(7px); }
+    70% { opacity: 1; transform: translate3d(3px, 2px, 0) scale(1.04) rotate(1deg); filter: blur(0px); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0) scale(1) rotate(0deg); filter: blur(0px); }
+  }
+
+  .kinetic-word {
+    display: inline-block;
+    white-space: pre;
+    opacity: 0;
+    will-change: transform, opacity, filter;
+    animation-duration: var(--motion-speed);
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-fill-mode: both;
+  }
+
+  .kinetic-gradient-word {
+    display: inline-block;
+    background: linear-gradient(135deg, #a78bfa 0%, #c084fc 45%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 16px rgba(192, 132, 252, 0.4));
+  }
+
+  .entrance-enabled .dir-0 { animation-name: omni-0; }
+  .entrance-enabled .dir-1 { animation-name: omni-1; }
+  .entrance-enabled .dir-2 { animation-name: omni-2; }
+  .entrance-enabled .dir-3 { animation-name: omni-3; }
+  .entrance-enabled .dir-4 { animation-name: omni-4; }
+  .entrance-enabled .dir-5 { animation-name: omni-5; }
+  .entrance-enabled .dir-6 { animation-name: omni-6; }
+  .entrance-enabled .dir-7 { animation-name: omni-7; }
+
+  @keyframes heroFadeUp {
+    0% { opacity: 0; transform: translateY(32px) scale(0.96); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .entrance-enabled .anim-hero-portrait {
+    animation: heroFadeUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .hero-float {
+    animation: floatGentle 6s ease-in-out infinite alternate;
+  }
+  .entrance-enabled .anim-btn {
+    animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.85s forwards;
+  }
+  .entrance-enabled .anim-pills {
+    animation: heroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 1.05s forwards;
+  }
+
+  .portrait-mask {
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.4) 86%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 68%, rgba(0,0,0,0.4) 86%, rgba(0,0,0,0) 100%);
+  }
+
+  /* Scroll Reveal Container */
+  .reveal-item {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Bento Card Glass & Glow Effects */
+  .bento-card {
+    position: relative;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  }
+  .bento-card:hover {
+    transform: translateY(-3px);
+  }
+  .dark .bento-card {
+    background: rgba(18, 26, 48, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.5);
+  }
+  .dark .bento-card:hover {
+    border-color: rgba(192, 132, 252, 0.35);
+    box-shadow: 0 20px 48px -12px rgba(168, 85, 247, 0.22);
+  }
+
+  /* Light Theme Overrides */
+  html:not(.dark) .light-card {
+    background-color: #ffffff !important;
+    border-color: rgba(226, 232, 240, 0.9) !important;
+    box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.06), 0 4px 12px -2px rgba(15, 23, 42, 0.03) !important;
+  }
+  html:not(.dark) .light-card:hover {
+    border-color: rgba(168, 85, 247, 0.4) !important;
+    box-shadow: 0 20px 38px -10px rgba(168, 85, 247, 0.12) !important;
+  }
+  html:not(.dark) .light-subtle {
+    background-color: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+  }
+  html:not(.dark) .light-text-title {
+    color: #0f172a !important;
+  }
+  html:not(.dark) .light-text-sub {
+    color: #475569 !important;
+  }
+  html:not(.dark) .light-nav {
+    background-color: rgba(255, 255, 255, 0.88) !important;
+    border-color: rgba(226, 232, 240, 0.8) !important;
+  }
+  html:not(.dark) .hero-fade-overlay {
+    background: linear-gradient(to bottom, rgba(248, 250, 252, 0) 0%, rgba(248, 250, 252, 0.7) 60%, #f8fafc 100%) !important;
+  }
+  html.dark .hero-fade-overlay {
+    background: linear-gradient(to bottom, rgba(6, 10, 22, 0) 0%, rgba(6, 10, 22, 0.75) 60%, #060a16 100%) !important;
+  }
+
+  /* Grid mesh subtle background */
+  .ambient-mesh {
+    background-image: 
+      radial-gradient(at 15% 15%, rgba(168, 85, 247, 0.18) 0px, transparent 55%),
+      radial-gradient(at 85% 25%, rgba(56, 189, 248, 0.16) 0px, transparent 50%),
+      radial-gradient(at 50% 85%, rgba(236, 72, 153, 0.12) 0px, transparent 60%);
+  }
+  html:not(.dark) .ambient-mesh {
+    background-image: 
+      radial-gradient(at 15% 15%, rgba(168, 85, 247, 0.08) 0px, transparent 55%),
+      radial-gradient(at 85% 25%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+      radial-gradient(at 50% 85%, rgba(236, 72, 153, 0.05) 0px, transparent 60%);
+  }
+</style>
+</head>
+<body class="font-sans flex flex-col min-h-screen relative overflow-x-hidden entrance-enabled ambient-mesh">
+<canvas id="stardust-canvas"></canvas>
+<!-- Notification Toast -->
+<div class="fixed top-20 right-5 z-[999999] px-4 py-2.5 rounded-xl bg-purple-950/90 dark:bg-purple-950/90 border border-purple-400/60 text-white text-xs font-semibold shadow-2xl backdrop-blur-xl transition-all duration-300 transform translate-x-36 opacity-0 pointer-events-none flex items-center gap-2" id="toast">
+<span class="material-symbols-outlined text-[18px] text-emerald-400">check_circle</span>
+<span id="toast-text">Changes Applied</span>
+</div>
+<!-- FIXED EDITORIAL HEADER -->
+<header class="fixed top-0 w-full z-50 bg-[#060a16]/80 dark:bg-[#060a16]/80 light-nav backdrop-blur-xl border-b border-white/10 dark:border-white/10 light-subtle transition-colors duration-300">
+<div class="h-16 max-w-4xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+<a class="flex items-center gap-3 group" href="#">
+<div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-sky-400 p-[1.5px] shadow-lg group-hover:scale-105 transition-transform">
+<div class="w-full h-full rounded-[14px] bg-[#060a16] dark:bg-[#060a16] light-card flex items-center justify-center">
+<span class="font-mono text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-sky-300 font-extrabold text-sm tracking-wider">BS</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-bold text-sm sm:text-[15px] leading-snug tracking-tight text-white dark:text-white light-text-title" id="nav-brand-name">Bala Shree M</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse"></span>
+</div>
+<span class="text-slate-400 dark:text-slate-400 light-text-sub text-[11px] font-mono tracking-tight" id="nav-brand-role">Product &amp; UI/UX Designer</span>
+</div>
+</a>
+<div class="flex items-center gap-2.5">
+<button class="h-9 px-3 rounded-xl bg-purple-950/40 dark:bg-purple-950/40 light-subtle border border-purple-500/40 hover:border-purple-400 text-purple-200 dark:text-purple-200 light-text-title text-xs font-semibold flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" id="admin-trigger-btn" onclick="handleAdminTrigger()">
+<span class="material-symbols-outlined text-[16px]" id="admin-icon">lock</span>
+<span id="admin-label">CMS</span>
+</button>
+<button class="h-9 w-9 rounded-xl bg-[#121a30]/80 dark:bg-[#121a30]/80 light-card border border-white/10 dark:border-white/10 hover:border-purple-400/60 flex items-center justify-center text-slate-300 light-text-title transition-all active:scale-95 shadow-sm" id="theme-btn" onclick="toggleTheme()" title="Toggle appearance">
+<span class="material-symbols-outlined text-[18px] text-amber-400" id="theme-icon">light_mode</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT WRAPPER -->
+<main class="flex flex-col relative w-full pt-20 pb-32 flex-grow">
+<div class="w-full max-w-2xl mx-auto px-4 sm:px-6 flex flex-col gap-14 sm:gap-16">
+<!-- 1. CINEMATIC HERO SECTION -->
+<section class="flex flex-col items-center text-center pt-3 pb-2 relative" id="hero-section">
+<!-- Availability Radar Beacon Badge -->
+<div class="mb-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/40 dark:bg-emerald-950/40 light-card border border-emerald-500/40 shadow-[0_0_20px_rgba(52,211,153,0.15)] backdrop-blur-md">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="text-[11px] font-mono font-medium text-emerald-300 dark:text-emerald-300 light-text-title tracking-tight">Available for Summer &amp; Fall 2026 Internships</span>
+</div>
+<!-- Hero Portrait Cutout with ambient volumetric lighting -->
+<div class="anim-hero-portrait relative w-full max-w-[310px] mx-auto flex items-end justify-center bg-transparent opacity-0 overflow-visible">
+<!-- Multi-layered atmospheric radial glows -->
+<div class="absolute inset-0 bg-gradient-to-tr from-purple-600/45 via-indigo-600/30 to-sky-400/25 rounded-full blur-3xl pointer-events-none scale-105 animate-glow-shift" id="hero-ambient-glow"></div>
+<div class="absolute -top-6 inset-x-8 h-40 bg-gradient-to-b from-purple-500/20 to-transparent blur-2xl pointer-events-none"></div>
+<div class="hero-float relative w-full flex items-end justify-center bg-transparent">
+<img alt="Bala Shree M - UI/UX Designer" class="w-full h-auto max-h-[380px] object-contain portrait-mask bg-transparent select-none relative z-10 drop-shadow-[0_12px_24px_rgba(0,0,0,0.5)]" id="hero-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK5_7T5rGHQE-WL76tg4_u9ui4zSX8kxDPTIjZYgv_fQKTBI3Cu9ORYxXxOZfiBafmnQs59gSzASpwi3vlaB_OnoAX9QHdINXgAkv1-uO_NuFozlbNhS0GnNj5FyOhx6S0pQbf7-a-ZdlZ7Tkruc61C4RnFccqH4RLV9nXBbCLUQwpnge7h80zhvfQvY7Q9EYm7_Fp4GdkOq7x4Bc5I2qhbW4t570TmnQZqti9YUTJDUsGGUcZVa5NM_pXmtn7ukH6qA"/>
+<div class="hero-fade-overlay absolute inset-x-0 bottom-0 h-32 pointer-events-none z-20 transition-colors duration-300"></div>
+</div>
+</div>
+<!-- Hero Headline with 360° Omnidirectional Kinetic Typography -->
+<div class="-mt-5 relative z-20 flex flex-col items-center gap-3.5">
+<h1 class="text-4xl sm:text-5xl font-extrabold text-white dark:text-white light-text-title tracking-tight leading-[1.18] flex flex-wrap justify-center items-center gap-x-2 gap-y-1" id="hero-headline">
+<span class="inline-flex items-center gap-2" id="display-greeting">
+<span class="kinetic-word dir-7" style="animation-delay: 0.15s;">Hi,</span>
+<span class="kinetic-word dir-1" style="animation-delay: 0.22s;">I'm</span>
+</span>
+<span class="inline-flex items-center gap-2" id="display-name">
+<span class="kinetic-word kinetic-gradient-word dir-5" style="animation-delay: 0.30s;">Bala</span>
+<span class="kinetic-word kinetic-gradient-word dir-2" style="animation-delay: 0.38s;">Shree</span>
+<span class="kinetic-word kinetic-gradient-word dir-0" style="animation-delay: 0.46s;">M</span>
+</span>
+</h1>
+<!-- High-Impact Glass Role Badge -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#181136]/80 dark:bg-[#181136]/80 light-card border border-purple-500/40 shadow-[0_0_20px_rgba(168,85,247,0.22)] backdrop-blur-md" id="role-badge-container">
+<span class="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_#c084fc] animate-pulse"></span>
+<span class="text-xs font-semibold text-purple-200 dark:text-purple-200 light-text-title tracking-wide inline-flex flex-wrap gap-1" id="display-role">
+<span class="kinetic-word dir-5" style="animation-delay: 0.50s;">• UI/UX</span>
+<span class="kinetic-word dir-3" style="animation-delay: 0.54s;">Designer</span>
+<span class="kinetic-word dir-1" style="animation-delay: 0.58s;">&amp;</span>
+<span class="kinetic-word dir-4" style="animation-delay: 0.62s;">EEE</span>
+<span class="kinetic-word dir-6" style="animation-delay: 0.66s;">Student</span>
+</span>
+</div>
+<!-- Editorial Bio Narrative (360° Kinetic Words) -->
+<p class="text-sm sm:text-base text-slate-300 dark:text-slate-300 light-text-sub leading-relaxed max-w-lg mx-auto px-2 mt-1 flex flex-wrap justify-center gap-x-1.5 gap-y-0.5" id="display-bio">
+<span class="kinetic-word dir-7" style="animation-delay: 0.60s;">Aspiring</span>
+<span class="kinetic-word dir-0" style="animation-delay: 0.63s;">UI/UX</span>
+<span class="kinetic-word dir-1" style="animation-delay: 0.66s;">Designer</span>
+<span class="kinetic-word dir-2" style="animation-delay: 0.69s;">with</span>
+<span class="kinetic-word dir-3" style="animation-delay: 0.72s;">an</span>
+<span class="kinetic-word dir-4" style="animation-delay: 0.75s;">Electrical</span>
+<span class="kinetic-word dir-5" style="animation-delay: 0.78s;">and</span>
+<span class="kinetic-word dir-6" style="animation-delay: 0.81s;">Electronics</span>
+<span class="kinetic-word dir-7" style="animation-delay: 0.84s;">Engineering</span>
+<span class="kinetic-word dir-0" style="animation-delay: 0.87s;">background</span>
+<span class="kinetic-word dir-1" style="animation-delay: 0.90s;">(Student,</span>
+<span class="kinetic-word dir-2" style="animation-delay: 0.93s;">2023–2027),</span>
+<span class="kinetic-word dir-3" style="animation-delay: 0.96s;">skilled</span>
+<span class="kinetic-word dir-4" style="animation-delay: 0.99s;">in</span>
+<span class="kinetic-word dir-5" style="animation-delay: 1.02s;">Figma,</span>
+<span class="kinetic-word dir-6" style="animation-delay: 1.05s;">wireframing,</span>
+<span class="kinetic-word dir-7" style="animation-delay: 1.08s;">prototyping,</span>
+<span class="kinetic-word dir-0" style="animation-delay: 1.11s;">and</span>
+<span class="kinetic-word dir-1" style="animation-delay: 1.14s;">user-centered</span>
+<span class="kinetic-word dir-2" style="animation-delay: 1.17s;">design.</span>
+<span class="kinetic-word dir-3" style="animation-delay: 1.20s;">Passionate</span>
+<span class="kinetic-word dir-4" style="animation-delay: 1.23s;">about</span>
+<span class="kinetic-word dir-5" style="animation-delay: 1.26s;">crafting</span>
+<span class="kinetic-word dir-6" style="animation-delay: 1.29s;">intuitive</span>
+<span class="kinetic-word dir-7" style="animation-delay: 1.32s;">and</span>
+<span class="kinetic-word dir-0" style="animation-delay: 1.35s;">visually</span>
+<span class="kinetic-word dir-1" style="animation-delay: 1.38s;">captivating</span>
+<span class="kinetic-word dir-2" style="animation-delay: 1.41s;">digital</span>
+<span class="kinetic-word dir-3" style="animation-delay: 1.44s;">experiences.</span>
+</p>
+<!-- CTA Row with Magnetic-style Gradient and Quick Copy Email -->
+<div class="anim-btn opacity-0 flex flex-col sm:flex-row w-full max-w-sm gap-3 pt-2">
+<a class="flex-1 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-purple-600 via-indigo-600 to-sky-500 hover:opacity-95 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-[0_0_28px_rgba(168,85,247,0.45)] border border-white/20 active:scale-95 transition-all group" href="#projects-section">
+<span>Explore Case Studies</span>
+<span class="text-base leading-none font-bold group-hover:translate-y-0.5 transition-transform">↓</span>
+</a>
+<button class="flex-1 py-3 px-5 rounded-2xl bg-[#121a30]/85 dark:bg-[#121a30]/85 light-card text-white dark:text-white light-text-title font-medium text-sm flex items-center justify-center gap-2 border border-white/10 dark:border-white/10 hover:border-purple-400/60 shadow-lg active:scale-95 transition-all group relative" id="copy-email-btn" onclick="copyEmailToClipboard()">
+<span class="material-symbols-outlined text-[18px] text-purple-400">content_copy</span>
+<span id="copy-email-label">Copy Email</span>
+</button>
+</div>
+<!-- Contact & Network Action Pills -->
+<div class="anim-pills opacity-0 grid grid-cols-2 sm:grid-cols-4 gap-2 w-full max-w-md pt-2">
+<div class="py-2 px-3 rounded-xl bg-[#10182c]/80 dark:bg-[#10182c]/80 light-card border border-white/10 flex items-center justify-center gap-1.5 text-xs text-slate-300 dark:text-slate-300 light-text-sub">
+<span class="text-purple-400">📍</span>
+<span class="truncate font-medium" id="display-location">Tamil Nadu, IN</span>
+</div>
+<a class="py-2 px-3 rounded-xl bg-[#10182c]/80 dark:bg-[#10182c]/80 light-card border border-white/10 hover:border-purple-400/60 flex items-center justify-center gap-1.5 text-xs text-slate-300 dark:text-slate-300 light-text-sub transition-all" href="mailto:balashreem12@gmail.com" id="pill-email-link">
+<span class="text-purple-400">✉</span>
+<span class="truncate font-medium">Email Me</span>
+</a>
+<a class="py-2 px-3 rounded-xl bg-[#10182c]/80 dark:bg-[#10182c]/80 light-card border border-white/10 hover:border-purple-400/60 flex items-center justify-center gap-1.5 text-xs text-slate-300 dark:text-slate-300 light-text-sub transition-all" href="tel:+918248905390" id="pill-phone-link">
+<span class="text-purple-400">📞</span>
+<span class="truncate font-medium">+91 82489...</span>
+</a>
+<a class="py-2 px-3 rounded-xl bg-[#10182c]/80 dark:bg-[#10182c]/80 light-card border border-white/10 hover:border-purple-400/60 flex items-center justify-center gap-1.5 text-xs text-slate-300 dark:text-slate-300 light-text-sub transition-all" href="https://linkedin.com/in/bala-shree-m" id="pill-linkedin-link" rel="noopener" target="_blank">
+<span class="text-sky-400">🔗</span>
+<span class="truncate font-medium">LinkedIn</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 2. ELEVATED SELECTED WORK (BENTO CASE STUDY SHOWCASE) -->
+<section class="flex flex-col gap-5 reveal-item" id="projects-section">
+<div class="flex items-end justify-between border-b border-white/10 pb-3">
+<div>
+<span class="text-xs font-mono text-purple-400 uppercase tracking-widest block font-semibold">Featured Projects</span>
+<h2 class="text-2xl sm:text-3xl text-white dark:text-white light-text-title font-extrabold tracking-tight">Selected Work &amp; Case Studies</h2>
+</div>
+<span class="font-mono text-xs px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20" id="projects-count-badge">02 Case Studies</span>
+</div>
+<div class="flex flex-col gap-6" id="projects-container">
+<!-- Case Study 1: BurgerCart -->
+<article class="bento-card p-6 sm:p-7 rounded-3xl light-card backdrop-blur-2xl flex flex-col gap-5 relative overflow-hidden" id="project-card-burgercart">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-1.5">
+<div class="flex flex-wrap items-center gap-1.5" id="burgercart-tags-container">
+<span class="px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[11px] font-mono font-medium border border-purple-500/30">Mobile App</span>
+<span class="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 text-[11px] font-mono font-medium border border-sky-500/30">Figma Prototype</span>
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-mono font-medium border border-emerald-500/30">Design System</span>
+</div>
+<h3 class="text-xl sm:text-2xl text-white dark:text-white light-text-title font-bold mt-1" id="burgercart-title">BurgerCart — Food Ordering &amp; Customizer Experience</h3>
+</div>
+<div class="w-11 h-11 rounded-2xl bg-purple-500/20 text-purple-300 border border-purple-500/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">lunch_dining</span>
+</div>
+</div>
+<!-- Interactive Figma Mockup Showcase View -->
+<a class="relative w-full h-52 sm:h-60 rounded-2xl overflow-hidden bg-gradient-to-br from-[#1c1236] via-[#0f172a] to-[#080d1a] shadow-inner flex flex-col justify-between p-5 group cursor-pointer border border-white/10 hover:border-purple-400/60 transition-all duration-300" href="https://embed.figma.com/proto/cYkbl8N1molzjjULAC2lBk/Untitled?node-id=252-380&amp;p=f&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;starting-point-node-id=163%3A188&amp;embed-host=share" id="figma-preview-card" rel="noopener noreferrer" target="_blank">
+<!-- Glass Mockup Graphic preview -->
+<div class="absolute right-5 -bottom-8 w-60 h-64 rounded-3xl bg-gradient-to-b from-[#2a1752] to-[#121a30] border-2 border-purple-500/30 p-3.5 shadow-2xl rotate-6 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500 pointer-events-none flex flex-col gap-2.5">
+<div class="w-16 h-3 mx-auto bg-purple-900/60 rounded-full"></div>
+<div class="flex items-center gap-2 p-2 bg-[#1b2542] rounded-xl">
+<span class="text-2xl">🍔</span>
+<div class="flex flex-col gap-1 w-full">
+<div class="h-2.5 w-3/4 bg-purple-400/80 rounded"></div>
+<div class="h-2 w-1/2 bg-slate-500/80 rounded"></div>
+</div>
+</div>
+<div class="p-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl flex items-center justify-between text-xs text-white font-bold">
+<span>Gourmet Stack</span>
+<span class="text-emerald-300 font-mono">$8.40</span>
+</div>
+</div>
+<div class="relative z-10 flex items-center justify-between">
+<div class="flex items-center gap-2 bg-[#0c1326]/90 px-3.5 py-1.5 rounded-full border border-purple-500/30 backdrop-blur-md">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+</span>
+<span class="text-xs text-purple-200 font-medium">Interactive Figma Prototype</span>
+</div>
+<span class="text-xs text-white bg-purple-600/90 hover:bg-purple-500 px-3 py-1.5 rounded-xl flex items-center gap-1.5 font-semibold shadow-md transition-all">
+<span>Play Prototype</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</span>
+</div>
+<div class="relative z-10 flex items-center">
+<div class="flex items-center gap-2 bg-[#1b2542]/85 px-3 py-1.5 rounded-lg backdrop-blur-md border border-white/10">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span class="font-mono text-xs text-slate-200 font-medium">Flow: Browse Catalog → Ingredient Tray → 1-Click Checkout</span>
+</div>
+</div>
+</a>
+<p class="text-sm text-slate-300 dark:text-slate-300 light-text-sub leading-relaxed" id="burgercart-desc">
+            Engineered user flows, interactive wireframes, component design systems, and responsive layouts. Solved conversion drop-offs with streamlined customizer trays and clear nutritional labeling.
+          </p>
+<!-- Key Metrics Grid -->
+<div class="grid grid-cols-3 gap-2.5 p-3 rounded-2xl bg-[#0e162b] dark:bg-[#0e162b] light-subtle text-center border border-white/5" id="burgercart-metrics">
+<div class="flex flex-col p-1">
+<span class="text-lg sm:text-xl text-purple-300 font-extrabold font-mono" id="m1-val">38%</span>
+<span class="text-[11px] text-slate-400 light-text-sub font-medium" id="m1-lbl">Faster Checkout</span>
+</div>
+<div class="flex flex-col p-1 border-x border-white/10">
+<span class="text-lg sm:text-xl text-emerald-400 font-extrabold font-mono" id="m2-val">24+</span>
+<span class="text-[11px] text-slate-400 light-text-sub font-medium" id="m2-lbl">Custom UI Atoms</span>
+</div>
+<div class="flex flex-col p-1">
+<span class="text-lg sm:text-xl text-sky-400 font-extrabold font-mono" id="m3-val">100%</span>
+<span class="text-[11px] text-slate-400 light-text-sub font-medium" id="m3-lbl">WCAG 2.1 AA</span>
+</div>
+</div>
+<button class="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-purple-600 via-indigo-600 to-sky-500 hover:opacity-95 text-white text-sm font-bold flex items-center justify-center gap-2 active:scale-95 transition-all shadow-[0_0_24px_rgba(168,85,247,0.35)]" id="btn-launch-prototype" onclick="launchPrototype()">
+<span class="material-symbols-outlined text-[20px]">play_circle</span>
+<span>Launch Interactive Figma Canvas</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</button>
+</article>
+<!-- Case Study 2: WildShield AI -->
+<article class="bento-card p-6 sm:p-7 rounded-3xl light-card backdrop-blur-2xl flex flex-col gap-5 relative overflow-hidden">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col gap-1.5">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-mono font-medium border border-emerald-500/30">AI Forest Tech</span>
+<span class="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 text-[11px] font-mono font-medium border border-sky-500/30">Web Dashboard</span>
+<span class="px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[11px] font-mono font-medium border border-purple-500/30">Role-Based UX</span>
+</div>
+<h3 class="text-xl sm:text-2xl text-white dark:text-white light-text-title font-bold mt-1">WildShield AI — Wildlife &amp; Forest Surveillance</h3>
+</div>
+<div class="w-11 h-11 rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">nature</span>
+</div>
+</div>
+<!-- Futuristic AI Surveillance Radar Mockup -->
+<div class="relative w-full h-48 sm:h-52 rounded-2xl overflow-hidden bg-gradient-to-br from-[#06241a] via-[#0b1b22] to-[#07131b] shadow-inner flex flex-col justify-between p-4 sm:p-5 border border-emerald-500/30 group">
+<div class="absolute inset-0 opacity-25 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<div class="relative z-10 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-xs font-mono font-bold text-emerald-300 uppercase tracking-wider">Live Threat Triage Grid</span>
+</div>
+<span class="text-[11px] font-mono text-emerald-200 bg-[#16382b]/90 border border-emerald-500/40 px-2.5 py-0.5 rounded-full">Officer Dispatch Active</span>
+</div>
+<div class="relative z-10 grid grid-cols-3 gap-2 my-auto">
+<div class="bg-black/50 border border-emerald-500/20 rounded-xl p-2.5 flex flex-col">
+<span class="text-[10px] font-mono text-slate-400">Sector 4-Alpha</span>
+<span class="text-xs font-bold text-emerald-400">Status Clear</span>
+</div>
+<div class="bg-black/50 border border-amber-500/40 rounded-xl p-2.5 flex flex-col">
+<span class="text-[10px] font-mono text-slate-400">Perimeter Sensor</span>
+<span class="text-xs font-bold text-amber-400 animate-pulse">Motion Logged</span>
+</div>
+<div class="bg-black/50 border border-purple-500/30 rounded-xl p-2.5 flex flex-col">
+<span class="text-[10px] font-mono text-slate-400">Camera Trap #12</span>
+<span class="text-xs font-bold text-purple-300">98.4% Confidence</span>
+</div>
+</div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="font-mono text-xs text-emerald-400 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[15px]">sensors</span> Real-time AI Vision Radar
+              </span>
+<span class="text-[11px] font-mono text-slate-300 light-text-sub bg-[#1b2542]/80 px-2.5 py-0.5 rounded border border-white/10">Patrol • Conservator • Analyst</span>
+</div>
+</div>
+<p class="text-sm text-slate-300 dark:text-slate-300 light-text-sub leading-relaxed">
+            Crafted tailored dashboards with specific permission hierarchies: immediate SOS dispatch for patrol officers, holistic analytics for forest conservators, and audit trails for ecological researchers.
+          </p>
+<div class="p-3.5 rounded-2xl bg-[#0e162b] dark:bg-[#0e162b] light-subtle flex items-center justify-between text-xs text-slate-300 border border-white/5">
+<span class="font-medium">Deliverables: Persona Maps, Real-time Alerts, GIS Map UI</span>
+<span class="text-emerald-400 font-mono font-semibold">Web App (React/Figma)</span>
+</div>
+</article>
+</div>
+</section>
+<!-- 3. VERIFIED CREDENTIALS BENTO (EXACT ORDER: 1. HCI, 2. UI DESIGN, 3. MICROSOFT, 4. SIMPLILEARN) -->
+<section class="flex flex-col gap-5 reveal-item" id="certifications-section">
+<div class="flex items-end justify-between border-b border-white/10 pb-3">
+<div>
+<span class="text-xs font-mono text-emerald-400 uppercase tracking-widest block font-semibold">Verified Credentials</span>
+<h2 class="text-2xl sm:text-3xl text-white dark:text-white light-text-title font-extrabold tracking-tight">Accredited Certifications</h2>
+</div>
+<span class="font-mono text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20" id="certs-count-badge">4 Credentials</span>
+</div>
+<div class="flex flex-col gap-6" id="certifications-container">
+<!-- 1st Priority: HCI (NPTEL - IIIT Delhi & IIT Madras) -->
+<div class="bento-card p-6 sm:p-7 rounded-3xl light-card backdrop-blur-2xl flex flex-col gap-4 border border-emerald-500/30" id="cert-card-hci">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<span class="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+</span>
+<div>
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono font-bold uppercase tracking-wide border border-emerald-500/30" id="hci-badge">Topper 2% • Elite</span>
+<h3 class="text-lg sm:text-xl text-white dark:text-white light-text-title font-bold mt-1" id="hci-title">Human Computer Interaction</h3>
+</div>
+</div>
+<div class="text-right">
+<span class="text-2xl sm:text-3xl font-mono font-black text-emerald-400" id="hci-score">99%</span>
+<span class="block text-[10px] font-mono text-slate-400 uppercase">Top 2% of India</span>
+</div>
+</div>
+<p class="text-xs sm:text-sm text-slate-300 light-text-sub" id="hci-subdesc">
+            Issued by <strong class="text-white dark:text-white light-text-title" id="hci-institute-lbl">IIIT Delhi &amp; IIT Madras</strong> | Online Assignments: 25/25, Proctored Exam: 73.75/75. <span class="font-mono" id="hci-roll-lbl">Roll: NPTEL26CS70S261700371</span>.
+          </p>
+<!-- Certificate Image Preview Card -->
+<div class="relative w-full rounded-2xl overflow-hidden bg-slate-900 shadow-xl cursor-pointer group border border-emerald-500/30" onclick="openCertModal('hci')">
+<img alt="HCI NPTEL Certificate" class="w-full h-48 sm:h-56 object-cover object-top group-hover:scale-[1.03] transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3fkGaURVN-mpYEO5nDNDH2G8TZECbfXwV_VyaQUhM6PQw8Wv9nVSU-rawcH0Zh5xCysc37OdiSr1IrpIeXiRbKpN35F8vSZFWC6H2LVhp-An0rlFWwjNEl6veJ9iNclxTKN8zDnl0_QuoxmySf39XXMLAOhAdOIdoOfJJpjzCqJW38YC5Qd65uenxMa4sCP-jx9JJvTgrf9Z-1FI177oIS_GmQSioEt7YEs42bEDvWjdDIs2ispapALk0t6OFh1kj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3.5">
+<span class="text-xs text-white bg-[#060a16]/90 backdrop-blur-md px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow-lg border border-white/20">
+<span class="material-symbols-outlined text-[16px] text-emerald-400">zoom_in</span> Tap to Inspect Verified NPTEL Credential
+              </span>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-emerald-300 text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 hover:bg-[#253258] transition-all border border-emerald-500/20" onclick="openCertModal('hci')">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>View Full Verified HCI Credential</span>
+</button>
+</div>
+<!-- 2nd Priority: UI Design (NPTEL - IIT Roorkee) -->
+<div class="bento-card p-6 sm:p-7 rounded-3xl light-card backdrop-blur-2xl flex flex-col gap-4 border border-purple-500/30" id="cert-card-ui">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<span class="w-12 h-12 rounded-2xl bg-purple-500/20 text-purple-300 border border-purple-500/40 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">design_services</span>
+</span>
+<div>
+<span class="px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-xs font-mono font-bold uppercase tracking-wide border border-purple-500/30" id="ui-badge">Elite Certified</span>
+<h3 class="text-lg sm:text-xl text-white dark:text-white light-text-title font-bold mt-1" id="ui-title">User Interface Design</h3>
+</div>
+</div>
+<div class="text-right">
+<span class="text-2xl sm:text-3xl font-mono font-black text-purple-300" id="ui-score">77%</span>
+<span class="block text-[10px] font-mono text-slate-400 uppercase">Elite Category</span>
+</div>
+</div>
+<p class="text-xs sm:text-sm text-slate-300 light-text-sub" id="ui-subdesc">
+            Issued by <strong class="text-white dark:text-white light-text-title" id="ui-institute-lbl">IIT Roorkee</strong> | Assignments: 23.83/25, Proctored Exam: 52.88/75. <span class="font-mono" id="ui-roll-lbl">Roll: NPTEL26AR15S663400201</span>.
+          </p>
+<div class="relative w-full rounded-2xl overflow-hidden bg-slate-900 shadow-xl cursor-pointer group border border-purple-500/30" onclick="openCertModal('ui')">
+<img alt="UI Design NPTEL Certificate" class="w-full h-48 sm:h-56 object-cover object-top group-hover:scale-[1.03] transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvpvJbjB6QEk1gMhlhr4ZO0b4dILl7qEYE6-wbfUFGM0tqf3o46BqSi3jApNnsYcQfArHqyEX44s-QBle73AZEl_daFLSfh-IB9PTI6LzM5jXqh_PIgsY8V0oIBqUmyPQ64Qv9EA2Irc9yFoLdBYL4LTAtT1Kh6yp_Ij2NOOKxJJH4KGnmnCwcNvK75FJmRC_6PsiJNodMd_bqIbjnHIIkQAHR63C0LupwG6mF9vd33N75KupYevjWQUUoZFwOVfdb"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3.5">
+<span class="text-xs text-white bg-[#060a16]/90 backdrop-blur-md px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow-lg border border-white/20">
+<span class="material-symbols-outlined text-[16px] text-purple-400">zoom_in</span> Tap to Inspect Verified NPTEL Credential
+              </span>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-purple-300 text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 hover:bg-[#253258] transition-all border border-purple-500/20" onclick="openCertModal('ui')">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>View Full Verified UI Design Credential</span>
+</button>
+</div>
+<!-- 3rd Priority: Microsoft Authorized • Coursera -->
+<div class="bento-card p-6 sm:p-7 rounded-3xl light-card backdrop-blur-2xl flex flex-col gap-4 border border-sky-500/30" id="cert-card-microsoft">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<span class="w-12 h-12 rounded-2xl bg-sky-500/20 text-sky-400 border border-sky-500/40 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</span>
+<div>
+<span class="px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 text-xs font-mono font-bold uppercase tracking-wide border border-sky-500/30">Microsoft Authorized • Coursera</span>
+<h3 class="text-lg sm:text-xl text-white dark:text-white light-text-title font-bold mt-1">Fundamentals of UI/UX Design</h3>
+</div>
+</div>
+<span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-lg bg-[#1b2542] text-sky-300 border border-sky-500/20">Feb 23, 2026</span>
+</div>
+<p class="text-xs sm:text-sm text-slate-300 light-text-sub">
+            Authorized by <strong class="text-white dark:text-white light-text-title">Microsoft</strong> and offered through <strong class="text-white dark:text-white light-text-title">Coursera</strong>. Verification URL: <a class="text-sky-400 underline hover:text-sky-300 font-mono" href="https://coursera.org/verify/PREFY24VH7QO" target="_blank">coursera.org/verify/PREFY24VH7QO</a>.
+          </p>
+<div class="relative w-full rounded-2xl overflow-hidden bg-white shadow-xl cursor-pointer group border border-slate-200 dark:border-white/10" onclick="openCertModal('microsoft')">
+<img alt="Microsoft Fundamentals of UI/UX Design Certificate" class="w-full h-52 sm:h-64 object-contain object-center group-hover:scale-[1.02] transition-all duration-300 bg-white" id="microsoft-thumb-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3zwXGLO8bYOa9X-S10lPOXREVfmLViipZ6EzhWMxzAoy3If3XrySO1XUzsw8q7GlHoAc7r5b5L_Wqr4PrxzBhrqYEEbuJTLk5NK7fXjad73pIMFovzvgtM3YRzUhW2k62Uuol1V-LS39-9ULSn7nviGpftSyvMiybMLzaqAWu8X8MVYehFN1R1PtXgpvnovNj4kc30IVJk1cJsAUQOONf0bA67SAiOZ-su54AL5r9RP0d3Wn8VvLctR44Bkgu1yEDjA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-3.5 pointer-events-none">
+<span class="text-xs text-white bg-[#060a16]/90 backdrop-blur-md px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow-lg border border-white/20">
+<span class="material-symbols-outlined text-[16px] text-sky-400">zoom_in</span> Tap to Inspect Verified Credential
+              </span>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-sky-300 text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 hover:bg-[#253258] transition-all border border-sky-500/20" onclick="openCertModal('microsoft')">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>View Verified Microsoft Credential</span>
+</button>
+</div>
+<!-- 4th Priority: Simplilearn SkillUp -->
+<div class="bento-card p-6 sm:p-7 rounded-3xl light-card backdrop-blur-2xl flex flex-col gap-4 border border-amber-500/30" id="cert-card-simplilearn">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<span class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/40 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">auto_stories</span>
+</span>
+<div>
+<span class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-xs font-mono font-bold uppercase tracking-wide border border-amber-500/30">Simplilearn SkillUp</span>
+<h3 class="text-lg sm:text-xl text-white dark:text-white light-text-title font-bold mt-1">Introduction to Graphic Design; Basics of UI/UX</h3>
+</div>
+</div>
+<span class="text-xs font-mono font-semibold px-2.5 py-1 rounded-lg bg-[#1b2542] text-amber-300 border border-amber-500/20">Dec 21, 2025</span>
+</div>
+<p class="text-xs sm:text-sm text-slate-300 light-text-sub">
+            Issued by <strong class="text-white dark:text-white light-text-title">Simplilearn</strong> | Certificate Code: <strong class="text-white dark:text-white light-text-title font-mono">9616590</strong> (CEO Krishna Kumar). Demonstrating foundational mastery in UI/UX and graphic design principles.
+          </p>
+<div class="relative w-full rounded-2xl overflow-hidden bg-white shadow-xl cursor-pointer group border border-slate-200 dark:border-white/10" onclick="openCertModal('simplilearn')">
+<img alt="Simplilearn Graphic Design Certificate" class="w-full h-52 sm:h-64 object-contain object-center group-hover:scale-[1.02] transition-all duration-300 bg-white" id="simplilearn-thumb-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiFUcvWsJ5pYl7WU40TAXcN6NKTFFcYLOgS2DjZZTi4czb9KC7sojgJ5RmDmnOMQlBXMHgDJLUMXI3g0vfbxVGrJlSDhFFymLzYIOKZxnNtQAee8lCaAffd4khI7Nc6aUbWWup7LJWTQaH38v-2dkvnEW9nvoOWmJWbflWwFqAwWU_wIsICpzwi-SUntKm8sJIIwlREToyPg63dmqhFrVRD0rbPUw2IIxDrUDTIpqiOmc7jyDlHQx_Z8219EErabTZ9w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-3.5 pointer-events-none">
+<span class="text-xs text-white bg-[#060a16]/90 backdrop-blur-md px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow-lg border border-white/20">
+<span class="material-symbols-outlined text-[16px] text-amber-400">zoom_in</span> Tap to Inspect Verified Credential
+              </span>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-amber-300 text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 hover:bg-[#253258] transition-all border border-amber-500/20" onclick="openCertModal('simplilearn')">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>View Verified Simplilearn Certificate</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 4. EXPERIENCE & INTERNSHIPS TIMELINE -->
+<section class="flex flex-col gap-5 reveal-item" id="experience-section">
+<div class="flex items-end justify-between border-b border-white/10 pb-3">
+<div>
+<span class="text-xs font-mono text-purple-400 uppercase tracking-widest block font-semibold">Career Journey</span>
+<h2 class="text-2xl sm:text-3xl text-white dark:text-white light-text-title font-extrabold tracking-tight">Experience &amp; Internships</h2>
+</div>
+</div>
+<div class="relative pl-6 sm:pl-8 border-l-2 border-purple-500/30 flex flex-col gap-8 ml-2 sm:ml-4" id="internships-container">
+<!-- Internship 1: GenLab -->
+<div class="relative bento-card p-6 sm:p-7 rounded-3xl light-card backdrop-blur-2xl flex flex-col gap-4" id="intern-card-genlab">
+<!-- Timeline Node Anchor -->
+<div class="absolute -left-[31px] sm:-left-[39px] top-7 w-4 h-4 rounded-full bg-purple-500 border-4 border-[#060a16] shadow-[0_0_12px_#a855f7]"></div>
+<div class="flex items-start justify-between gap-3">
+<div>
+<span class="font-mono text-xs text-purple-400 font-semibold" id="genlab-dates">Apr 2026</span>
+<h3 class="text-lg text-white dark:text-white light-text-title font-bold" id="genlab-role">UI/UX Design Intern</h3>
+<p class="text-xs sm:text-sm text-slate-300 light-text-sub font-medium" id="genlab-company">GenLab Pvt. Ltd.</p>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-xs font-mono font-medium border border-purple-500/30">Internship</span>
+</div>
+<ul class="flex flex-col gap-2 text-slate-300 light-text-sub text-xs sm:text-sm" id="genlab-bullets">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-purple-400 text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Conducted foundational user interviews and empathy mapping for client digital platforms.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-purple-400 text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Executed accessibility (WCAG 2.1) audits and delivered scalable design system tokens in Figma.</span>
+</li>
+</ul>
+<div class="relative w-full rounded-2xl overflow-hidden bg-slate-900 shadow-md cursor-pointer group border border-purple-500/20" onclick="openCertModal('genlab')">
+<img alt="GenLab Internship Completion Letter" class="w-full h-40 sm:h-48 object-cover object-top group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHmj3mWV4EXh9yuYHpS23T8mjcMESGjsDK31hQ2vRSAt6KvJAldqGFgZFITE1iuSpv5jHhncENd6CgoRcHwS2RG-fpUr5zqDHwSCsrRfoLCyfeTUnCQAP_dvg4pPm4-gc-jaTRLyrviV-0ubhRR-166WYLmacPX85Z2ni0FX6bG_bNCxuyf-hAHb_xc0gQOrKF0ceTYcRIxJjwqNqH_ne9WFA2wddF6w3v1WgjVaXuEIy0I9khV-MhC4Xdt1OYL9W7sg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3">
+<span class="text-xs text-white bg-[#060a16]/90 backdrop-blur-md px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow-lg border border-white/20">
+<span class="material-symbols-outlined text-[16px] text-purple-400">zoom_in</span> View GenLab Certificate
+              </span>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-xl bg-[#1b2542] dark:bg-[#1b2542] light-subtle hover:bg-[#253258] text-purple-300 text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all border border-purple-500/20" onclick="openCertModal('genlab')">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>View Internship Certificate</span>
+</button>
+</div>
+<!-- Internship 2: TVK Technologies -->
+<div class="relative bento-card p-6 sm:p-7 rounded-3xl light-card backdrop-blur-2xl flex flex-col gap-4" id="intern-card-tvk">
+<div class="absolute -left-[31px] sm:-left-[39px] top-7 w-4 h-4 rounded-full bg-emerald-500 border-4 border-[#060a16] shadow-[0_0_12px_#34d399]"></div>
+<div class="flex items-start justify-between gap-3">
+<div>
+<span class="font-mono text-xs text-emerald-400 font-semibold" id="tvk-dates">Jun 2026</span>
+<h3 class="text-lg text-white dark:text-white light-text-title font-bold" id="tvk-role">Full Stack Development Intern</h3>
+<p class="text-xs sm:text-sm text-slate-300 light-text-sub font-medium" id="tvk-company">TVK Technologies</p>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-mono font-medium border border-emerald-500/30">Internship</span>
+</div>
+<ul class="flex flex-col gap-2 text-slate-300 light-text-sub text-xs sm:text-sm" id="tvk-bullets">
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-emerald-400 text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Architected responsive frontend views using HTML5, modern CSS, and component frameworks.</span>
+</li>
+<li class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-emerald-400 text-[18px] shrink-0 mt-0.5">check_circle</span>
+<span>Bridged developer-designer handoff to achieve pixel-perfect fidelity from prototypes to code.</span>
+</li>
+</ul>
+<div class="relative w-full rounded-2xl overflow-hidden bg-slate-900 shadow-md cursor-pointer group border border-emerald-500/20" onclick="openCertModal('tvk')">
+<img alt="TVK Technologies Completion Letter" class="w-full h-40 sm:h-48 object-cover object-top group-hover:scale-105 transition-all duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeiut2Mi2VIy43SOMMAeuUgVpInUuQe2CM7c7XcR6xgcBBcXZPCi-dxh2bPpGujlN8l_YPZ8pO5VODTiDFZFA7h4UERoivYe-DrO_5zxdwEiLjcQVa3kJfF8TykpeUzhcvln6QB6oocYMWQgJDA6u_gjwn0l2iW1Mg9ZYuDFZd5bR0x7nZg5kdlP0svc7qtdJV4r6mW5HCtiduADYDiQjX7CKhLjT-kyW7W0JWE6HUxaNL4Jv7ATsRg85bfQqSuH5u8g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3">
+<span class="text-xs text-white bg-[#060a16]/90 backdrop-blur-md px-3 py-1.5 rounded-xl flex items-center gap-1.5 shadow-lg border border-white/20">
+<span class="material-symbols-outlined text-[16px] text-emerald-400">zoom_in</span> View TVK Completion Letter
+              </span>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-xl bg-[#1b2542] dark:bg-[#1b2542] light-subtle hover:bg-[#253258] text-emerald-400 text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 transition-all border border-emerald-500/20" onclick="openCertModal('tvk')">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>View Completion Letter</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 5. BENTO CAPABILITIES & SKILLS GRID -->
+<section class="flex flex-col gap-5 reveal-item" id="skills-section">
+<div class="flex items-end justify-between border-b border-white/10 pb-3">
+<div>
+<span class="text-xs font-mono text-purple-400 uppercase tracking-widest block font-semibold">Specializations</span>
+<h2 class="text-2xl sm:text-3xl text-white dark:text-white light-text-title font-extrabold tracking-tight">Skills &amp; Design Arsenal</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Card 1: UX Strategy -->
+<div class="bento-card p-5 rounded-2xl light-card backdrop-blur-2xl flex flex-col gap-3">
+<div class="flex items-center gap-2 text-purple-400">
+<span class="material-symbols-outlined text-[22px]">psychology</span>
+<h3 class="text-sm font-bold text-white dark:text-white light-text-title">UX Research &amp; Strategy</h3>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-lg bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium">User-Centered Design (UCD)</span>
+<span class="px-2.5 py-1 rounded-lg bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium">Wireframing</span>
+<span class="px-2.5 py-1 rounded-lg bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium">Information Architecture</span>
+<span class="px-2.5 py-1 rounded-lg bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium">Usability Auditing</span>
+<span class="px-2.5 py-1 rounded-lg bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium">User Personas</span>
+</div>
+</div>
+<!-- Card 2: UI Craft & Systems -->
+<div class="bento-card p-5 rounded-2xl light-card backdrop-blur-2xl flex flex-col gap-3">
+<div class="flex items-center gap-2 text-sky-400">
+<span class="material-symbols-outlined text-[22px]">brush</span>
+<h3 class="text-sm font-bold text-white dark:text-white light-text-title">UI Craft &amp; Systems</h3>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2.5 py-1 rounded-lg bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium">Figma Mastery</span>
+<span class="px-2.5 py-1 rounded-lg bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium">Design Tokens</span>
+<span class="px-2.5 py-1 rounded-lg bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium">High-Fi Prototyping</span>
+<span class="px-2.5 py-1 rounded-lg bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium">Micro-interactions</span>
+<span class="px-2.5 py-1 rounded-lg bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium">Auto-Layout Engine</span>
+</div>
+</div>
+<!-- Card 3: Code & Accessibility -->
+<div class="bento-card p-5 rounded-2xl light-card backdrop-blur-2xl flex flex-col gap-3 sm:col-span-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-emerald-400">
+<span class="material-symbols-outlined text-[22px]">terminal</span>
+<h3 class="text-sm font-bold text-white dark:text-white light-text-title">Frontend Engineering &amp; Tool Stack</h3>
+</div>
+<span class="text-xs font-mono text-slate-400">Figma • Code Bridge</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-xl bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> HTML5 &amp; Modern CSS
+            </span>
+<span class="px-3 py-1.5 rounded-xl bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span> Tailwind CSS
+            </span>
+<span class="px-3 py-1.5 rounded-xl bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span> WCAG 2.1 AA Standards
+            </span>
+<span class="px-3 py-1.5 rounded-xl bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-pink-400"></span> FigJam &amp; Miro
+            </span>
+<span class="px-3 py-1.5 rounded-xl bg-[#1b2542] dark:bg-[#1b2542] light-subtle text-xs text-slate-200 light-text-title font-medium flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Git / GitHub
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. HIGH-IMPACT CONTACT FOOTER -->
+<section class="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#1c1236] via-[#10182c] to-[#0a1124] dark:from-[#1c1236] dark:via-[#10182c] dark:to-[#0a1124] light-card border border-purple-500/30 shadow-2xl flex flex-col gap-6 text-center reveal-item relative overflow-hidden">
+<div class="absolute -top-16 -right-16 w-44 h-44 bg-purple-600/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-16 -left-16 w-44 h-44 bg-sky-600/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col items-center gap-2 relative z-10">
+<span class="text-xs font-mono text-purple-400 uppercase tracking-widest font-semibold block">Let's Create Together</span>
+<h2 class="text-2xl sm:text-3xl text-white dark:text-white light-text-title font-extrabold tracking-tight">Have an opportunity or project in mind?</h2>
+<p class="text-xs sm:text-sm text-slate-300 light-text-sub max-w-md mt-1">
+          Currently open to Summer &amp; Fall 2026 UI/UX design internships, junior product designer roles, and freelance consulting engagements.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-3 w-full max-w-sm mx-auto relative z-10">
+<a class="flex-1 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-purple-600 via-indigo-600 to-sky-500 hover:opacity-95 text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 active:scale-95 transition-all shadow-[0_0_24px_rgba(168,85,247,0.4)]" href="mailto:balashreem12@gmail.com">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Send Direct Email</span>
+</a>
+<a class="flex-1 py-3 px-5 rounded-2xl bg-[#1b2542] dark:bg-[#1b2542] light-subtle border border-white/10 hover:border-purple-400/60 text-white dark:text-white light-text-title text-xs sm:text-sm font-semibold flex items-center justify-center gap-2 active:scale-95 transition-all" href="https://linkedin.com/in/bala-shree-m" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-sky-400">share</span>
+<span>LinkedIn</span>
+</a>
+</div>
+</section>
+</div>
+</main>
+<!-- FIXED ULTRA-AESTHETIC FLOATING BOTTOM DOCK -->
+<nav class="fixed bottom-3 inset-x-0 z-50 flex justify-center px-4 pointer-events-none">
+<div class="pointer-events-auto h-14 px-4 rounded-2xl bg-[#0a1124]/85 dark:bg-[#0a1124]/85 light-nav backdrop-blur-2xl border border-white/15 dark:border-white/15 light-card shadow-[0_16px_36px_rgba(0,0,0,0.5)] flex items-center gap-3">
+<div class="flex items-center gap-1">
+<a class="px-3 py-1.5 rounded-xl flex items-center gap-1.5 text-purple-300 text-xs font-semibold hover:bg-white/5 transition-all" href="#projects-section">
+<span class="material-symbols-outlined text-[17px]">grid_view</span>
+<span>Work</span>
+</a>
+<a class="px-3 py-1.5 rounded-xl flex items-center gap-1.5 text-slate-300 light-text-sub hover:text-white hover:bg-white/5 text-xs font-medium transition-all" href="#certifications-section">
+<span class="material-symbols-outlined text-[17px]">workspace_premium</span>
+<span>Certs</span>
+</a>
+<a class="px-3 py-1.5 rounded-xl flex items-center gap-1.5 text-slate-300 light-text-sub hover:text-white hover:bg-white/5 text-xs font-medium transition-all" href="#experience-section">
+<span class="material-symbols-outlined text-[17px]">badge</span>
+<span>Timeline</span>
+</a>
+</div>
+<div class="h-5 w-[1px] bg-white/15"></div>
+<div class="flex items-center gap-1.5">
+<a class="w-8 h-8 rounded-xl flex items-center justify-center text-slate-300 hover:text-purple-300 hover:bg-white/10 transition-all" href="mailto:balashreem12@gmail.com" title="Email Bala">
+<span class="material-symbols-outlined text-[16px]">alternate_email</span>
+</a>
+<a class="w-8 h-8 rounded-xl flex items-center justify-center text-slate-300 hover:text-sky-300 hover:bg-white/10 transition-all" href="https://linkedin.com/in/bala-shree-m" rel="noopener" target="_blank" title="LinkedIn Profile">
+<span class="material-symbols-outlined text-[16px]">share</span>
+</a>
+<a class="w-8 h-8 rounded-xl flex items-center justify-center text-emerald-300 bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/30 transition-all" href="tel:+918248905390" title="Direct Phone Call">
+<span class="material-symbols-outlined text-[16px]">call</span>
+</a>
+</div>
+</div>
+</nav>
+<!-- DYNAMIC CERTIFICATE INSPECT MODAL (ORDER: 1. HCI, 2. UI, 3. Microsoft, 4. Simplilearn, 5. GenLab, 6. TVK) -->
+<div class="fixed inset-0 z-[99999] bg-black/85 backdrop-blur-md hidden flex-col justify-center items-center p-4" id="cert-modal">
+<div class="w-full max-w-2xl bg-[#0e162b] dark:bg-[#0e162b] light-card rounded-3xl shadow-2xl flex flex-col overflow-hidden max-h-[92vh] relative border border-white/15">
+<div class="flex items-center justify-between px-4 py-3 bg-[#17223e] dark:bg-[#17223e] light-subtle border-b border-white/10">
+<div class="flex items-center gap-1.5 overflow-x-auto py-1" id="cert-modal-tabs">
+<button class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-400 text-slate-900 whitespace-nowrap shadow-sm" id="tab-btn-hci" onclick="switchCertTab('hci')">1. HCI (99%)</button>
+<button class="px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 light-text-sub whitespace-nowrap" id="tab-btn-ui" onclick="switchCertTab('ui')">2. UI (77%)</button>
+<button class="px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 light-text-sub whitespace-nowrap" id="tab-btn-microsoft" onclick="switchCertTab('microsoft')">3. Microsoft</button>
+<button class="px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 light-text-sub whitespace-nowrap" id="tab-btn-simplilearn" onclick="switchCertTab('simplilearn')">4. Simplilearn</button>
+<button class="px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 light-text-sub whitespace-nowrap" id="tab-btn-genlab" onclick="switchCertTab('genlab')">GenLab</button>
+<button class="px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 light-text-sub whitespace-nowrap" id="tab-btn-tvk" onclick="switchCertTab('tvk')">TVK Tech</button>
+</div>
+<button class="p-1.5 rounded-xl bg-[#222e50] text-slate-300 hover:text-white shrink-0 ml-3" onclick="closeCertModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="relative w-full flex-grow overflow-auto p-4 bg-[#060a16] flex items-center justify-center min-h-[300px]">
+<img alt="Verified Certificate" class="w-full h-auto object-contain rounded-xl shadow-2xl max-h-[62vh] border border-white/10" id="cert-display-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3fkGaURVN-mpYEO5nDNDH2G8TZECbfXwV_VyaQUhM6PQw8Wv9nVSU-rawcH0Zh5xCysc37OdiSr1IrpIeXiRbKpN35F8vSZFWC6H2LVhp-An0rlFWwjNEl6veJ9iNclxTKN8zDnl0_QuoxmySf39XXMLAOhAdOIdoOfJJpjzCqJW38YC5Qd65uenxMa4sCP-jx9JJvTgrf9Z-1FI177oIS_GmQSioEt7YEs42bEDvWjdDIs2ispapALk0t6OFh1kj"/>
+</div>
+<div class="p-4 bg-[#121c35] dark:bg-[#121c35] light-subtle flex flex-col gap-1 border-t border-white/10">
+<div class="flex items-center justify-between">
+<span class="text-xs text-emerald-400 font-bold" id="cert-institute">IIIT Delhi &amp; IIT Madras</span>
+<span class="font-mono text-xs text-slate-400 light-text-sub" id="cert-roll">Roll: NPTEL26CS70S261700371</span>
+</div>
+<p class="text-xs text-slate-300 light-text-sub" id="cert-summary">Human Computer Interaction (In English) — Elite + Topper (Top 2%), Final Score: 99%.</p>
+</div>
+</div>
+</div>
+<!-- ADMIN AUTH MODAL -->
+<div class="fixed inset-0 z-[99999] bg-black/85 backdrop-blur-md hidden flex-col justify-center items-center p-4" id="admin-modal">
+<div class="w-full max-w-sm bg-[#121a30] dark:bg-[#121a30] light-card rounded-3xl shadow-2xl p-6 border border-purple-500/40 flex flex-col gap-4 relative">
+<button class="absolute top-4 right-4 p-1.5 rounded-lg text-slate-400 hover:text-white" onclick="closeAdminModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-purple-600/20 text-purple-400 flex items-center justify-center border border-purple-500/30">
+<span class="material-symbols-outlined text-[22px]">admin_panel_settings</span>
+</div>
+<div>
+<h3 class="text-base font-bold text-white dark:text-white light-text-title">Admin Authentication</h3>
+<p class="text-xs text-slate-400 light-text-sub">Enter credentials to edit portfolio CMS</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 mt-1">
+<div>
+<label class="text-xs font-semibold text-slate-300 light-text-title">Username</label>
+<input class="w-full mt-1 px-3 py-2 rounded-xl bg-[#060a16] border border-white/10 text-white text-xs focus:outline-none focus:border-purple-500" id="admin-user-input" placeholder="bala@1234" type="text"/>
+</div>
+<div>
+<label class="text-xs font-semibold text-slate-300 light-text-title">Password</label>
+<input class="w-full mt-1 px-3 py-2 rounded-xl bg-[#060a16] border border-white/10 text-white text-xs focus:outline-none focus:border-purple-500" id="admin-pass-input" placeholder="••••••••" type="password"/>
+</div>
+<p class="text-xs text-rose-400 font-medium hidden" id="admin-error-msg">Invalid credentials. Please verify your login.</p>
+</div>
+<button class="w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-xs font-bold shadow-lg active:scale-95 transition-all" onclick="submitAdminLogin()">
+      Authenticate &amp; Open CMS
+    </button>
+</div>
+</div>
+<!-- CMS STUDIO LIVE MANAGEMENT PANEL (5-TABS PRESERVED) -->
+<div class="fixed inset-y-0 right-0 w-full sm:w-[500px] bg-[#10182c] dark:bg-[#10182c] light-card shadow-2xl border-l border-white/10 hidden flex-col z-[99999] overflow-hidden" id="cms-panel">
+<div class="flex items-center justify-between p-4 border-b border-white/10 bg-[#0e1628] dark:bg-[#0e1628] light-subtle">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+<div>
+<h3 class="text-sm font-bold text-white dark:text-white light-text-title">Portfolio CMS &amp; Dynamic Studio</h3>
+<span class="text-[10px] text-purple-300 font-mono">Live multi-angle kinetic engine active</span>
+</div>
+</div>
+<button class="p-1 rounded-lg text-slate-400 hover:text-white" onclick="toggleCMSPanel()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex items-center bg-[#060a16] px-2 py-1.5 border-b border-white/10 gap-1 overflow-x-auto">
+<button class="px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-purple-600 text-white whitespace-nowrap" id="cms-btn-1" onclick="switchCMSTab(1)">Hero &amp; Bio</button>
+<button class="px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 whitespace-nowrap" id="cms-btn-2" onclick="switchCMSTab(2)">Motion &amp; VFX</button>
+<button class="px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 whitespace-nowrap" id="cms-btn-3" onclick="switchCMSTab(3)">Certificates</button>
+<button class="px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 whitespace-nowrap" id="cms-btn-4" onclick="switchCMSTab(4)">Prototypes</button>
+<button class="px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 whitespace-nowrap" id="cms-btn-5" onclick="switchCMSTab(5)">Internships</button>
+</div>
+<div class="flex-grow overflow-y-auto p-4 flex flex-col gap-4 text-xs">
+<!-- PANE 1: HERO & BIO -->
+<div class="flex flex-col gap-3" id="cms-pane-1">
+<div>
+<label class="font-semibold text-purple-300">Display Name</label>
+<input class="w-full mt-1 p-2 rounded-lg bg-[#060a16] border border-white/10 text-white text-xs" id="cms-name" oninput="applyHeroCMS()" type="text" value="Bala Shree M"/>
+</div>
+<div>
+<label class="font-semibold text-purple-300">Role Badge</label>
+<input class="w-full mt-1 p-2 rounded-lg bg-[#060a16] border border-white/10 text-white text-xs" id="cms-role" oninput="applyHeroCMS()" type="text" value="• UI/UX Designer &amp; EEE Student"/>
+</div>
+<div>
+<label class="font-semibold text-purple-300">Bio Narrative</label>
+<textarea class="w-full mt-1 p-2 rounded-lg bg-[#060a16] border border-white/10 text-white text-xs leading-relaxed" id="cms-bio" oninput="applyHeroCMS()" rows="4">Aspiring UI/UX Designer with an Electrical and Electronics Engineering background (Student, 2023–2027), skilled in Figma, wireframing, prototyping, and user-centered design. Passionate about crafting intuitive and visually captivating digital experiences.</textarea>
+</div>
+<div>
+<label class="font-semibold text-purple-300">Email Address</label>
+<input class="w-full mt-1 p-2 rounded-lg bg-[#060a16] border border-white/10 text-white text-xs" id="cms-email" oninput="applyHeroCMS()" type="text" value="balashreem12@gmail.com"/>
+</div>
+<div>
+<label class="font-semibold text-purple-300">Phone</label>
+<input class="w-full mt-1 p-2 rounded-lg bg-[#060a16] border border-white/10 text-white text-xs" id="cms-phone" oninput="applyHeroCMS()" type="text" value="+91 8248905390"/>
+</div>
+<div>
+<label class="font-semibold text-purple-300">LinkedIn URL</label>
+<input class="w-full mt-1 p-2 rounded-lg bg-[#060a16] border border-white/10 text-white text-xs" id="cms-linkedin" oninput="applyHeroCMS()" type="text" value="https://linkedin.com/in/bala-shree-m"/>
+</div>
+</div>
+<!-- PANE 2: MOTION & ANIMATIONS STUDIO -->
+<div class="hidden flex-col gap-4" id="cms-pane-2">
+<div class="p-3.5 rounded-xl bg-[#060a16] border border-purple-500/30 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div>
+<h4 class="font-bold text-white text-xs flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-purple-400">animation</span>
+              360° Omnidirectional Kinetic Word Flow
+            </h4>
+<p class="text-[11px] text-slate-400">Every word converges into place from distinct radial angles</p>
+</div>
+<button class="px-2.5 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-[11px] font-semibold active:scale-95 shadow-md flex items-center gap-1" onclick="replayAllKineticWords()">
+<span class="material-symbols-outlined text-[14px]">replay</span>
+<span>Replay</span>
+</button>
+</div>
+</div>
+</div>
+<!-- PANE 3: CERTIFICATES -->
+<div class="hidden flex-col gap-4" id="cms-pane-3">
+<p class="text-slate-400">Certificates hierarchy verified: 1. HCI, 2. UI Design, 3. Microsoft, 4. Simplilearn, 5. GenLab, 6. TVK.</p>
+</div>
+<!-- PANE 4: PROTOTYPES -->
+<div class="hidden flex-col gap-3" id="cms-pane-4">
+<p class="text-slate-400">Prototypes management: BurgerCart &amp; WildShield AI configured.</p>
+</div>
+<!-- PANE 5: INTERNSHIPS -->
+<div class="hidden flex-col gap-3" id="cms-pane-5">
+<p class="text-slate-400">Internship timeline details synced with verified credential previews.</p>
+</div>
+</div>
+<div class="p-4 border-t border-white/10 bg-[#0e1628] dark:bg-[#0e1628] light-subtle flex items-center justify-between">
+<button class="py-2 px-4 rounded-xl bg-rose-900/50 hover:bg-rose-900/70 text-rose-300 border border-rose-500/30 text-xs font-semibold active:scale-95 transition-all" onclick="logoutAdmin()">
+      Logout
+    </button>
+<button class="py-2 px-5 rounded-xl bg-gradient-to-r from-purple-600 to-emerald-600 text-white text-xs font-bold shadow-lg active:scale-95 transition-all flex items-center gap-1.5" onclick="showToast('Portfolio updates active!')">
+<span class="material-symbols-outlined text-[16px]">save</span>
+<span>Save Changes</span>
+</button>
+</div>
+</div>
+<!-- SCRIPTS & INTERACTION ENGINE -->
+<script>
+  // Helper to split any string into multi-angle 360° kinetic words
+  function buildKineticWordsHtml(text, startDelay = 0.25, step = 0.04, customClass = '') {
+    const words = text.split(/\s+/).filter(Boolean);
+    return words.map((w, idx) => {
+      const dir = (idx * 3 + 1) % 8; // Varied radial trajectory angles: 0 to 7
+      const delay = (startDelay + idx * step).toFixed(2);
+      return `<span class="kinetic-word dir-${dir} ${customClass}" style="animation-delay: ${delay}s">${w}</span>`;
+    }).join(' ');
+  }
+
+  // Builder for Name words with specific directional angles and gradient styling
+  function buildNameKineticHtml(text, startDelay = 0.30, step = 0.08) {
+    const words = text.split(/\s+/).filter(Boolean);
+    const presetDirs = [5, 2, 0, 7, 3, 6, 1, 4];
+    return words.map((w, idx) => {
+      const dir = presetDirs[idx % presetDirs.length];
+      const delay = (startDelay + idx * step).toFixed(2);
+      return `<span class="kinetic-word kinetic-gradient-word dir-${dir}" style="animation-delay: ${delay}s">${w}</span>`;
+    }).join(' ');
+  }
+
+  // 1. SCROLL REVEAL OBSERVER
+  function initScrollObserver() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-item').forEach(el => observer.observe(el));
+  }
+  window.addEventListener('DOMContentLoaded', initScrollObserver);
+
+  // Replay all kinetic words across the page
+  function replayAllKineticWords() {
+    const allWords = document.querySelectorAll('.kinetic-word');
+    allWords.forEach(w => {
+      w.style.animation = 'none';
+      w.offsetHeight; // trigger reflow
+      w.style.animation = '';
+    });
+    showToast('Replayed 360° word animations!');
+  }
+
+  // 2. STARDUST PARTICLES CANVAS
+  const canvas = document.getElementById('stardust-canvas');
+  const ctx = canvas.getContext('2d');
+  let width = canvas.width = window.innerWidth;
+  let height = canvas.height = window.innerHeight;
+
+  window.addEventListener('resize', () => {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  });
+
+  const particles = [];
+  const colors = ['#c084fc', '#38bdf8', '#34d399', '#f472b6', '#a78bfa'];
+  window.addEventListener('pointermove', (e) => {
+    for (let i = 0; i < 2; i++) {
+      particles.push({
+        x: e.clientX,
+        y: e.clientY,
+        vx: (Math.random() - 0.5) * 1.6,
+        vy: (Math.random() - 0.5) * 1.6 - 0.4,
+        size: Math.random() * 2.5 + 1,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        life: 1
+      });
+    }
+  });
+
+  function renderParticles() {
+    ctx.clearRect(0, 0, width, height);
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.life -= 0.024;
+      if (p.life <= 0) {
+        particles.splice(i, 1);
+        continue;
+      }
+      ctx.globalAlpha = p.life;
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    requestAnimationFrame(renderParticles);
+  }
+  requestAnimationFrame(renderParticles);
+
+  // 3. TOAST NOTIFICATION
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    const txt = document.getElementById('toast-text');
+    txt.textContent = msg;
+    toast.classList.remove('opacity-0', 'translate-x-36');
+    toast.classList.add('opacity-100', 'translate-x-0');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-x-0');
+      toast.classList.add('opacity-0', 'translate-x-36');
+    }, 2400);
+  }
+
+  // 4. COPY EMAIL HELPER
+  function copyEmailToClipboard() {
+    const email = "balashreem12@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+      const label = document.getElementById('copy-email-label');
+      label.textContent = "Copied to Clipboard!";
+      showToast("Email address copied: " + email);
+      setTimeout(() => {
+        label.textContent = "Copy Email";
+      }, 2500);
+    });
+  }
+
+  // 5. THEME TOGGLE
+  function toggleTheme() {
+    const isDark = document.documentElement.classList.toggle('dark');
+    document.getElementById('theme-icon').textContent = isDark ? 'light_mode' : 'dark_mode';
+    localStorage.setItem('portfolio_theme', isDark ? 'dark' : 'light');
+    showToast(isDark ? "Dark space mode active" : "Porcelain light mode active");
+  }
+
+  // 6. CERTIFICATE REPOSITORY & MODAL LOGIC (EXACT SEQUENCE: 1. HCI, 2. UI, 3. Microsoft, 4. Simplilearn, 5. GenLab, 6. TVK)
+  const certData = {
+    hci: {
+      title: '1. HCI (99%)',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD3fkGaURVN-mpYEO5nDNDH2G8TZECbfXwV_VyaQUhM6PQw8Wv9nVSU-rawcH0Zh5xCysc37OdiSr1IrpIeXiRbKpN35F8vSZFWC6H2LVhp-An0rlFWwjNEl6veJ9iNclxTKN8zDnl0_QuoxmySf39XXMLAOhAdOIdoOfJJpjzCqJW38YC5Qd65uenxMa4sCP-jx9JJvTgrf9Z-1FI177oIS_GmQSioEt7YEs42bEDvWjdDIs2ispapALk0t6OFh1kj',
+      inst: 'IIIT Delhi & IIT Madras',
+      roll: 'Roll: NPTEL26CS70S261700371',
+      summary: 'Human Computer Interaction (In English) — Elite + Topper (Top 2% of candidates nationwide), Final Score: 99%.'
+    },
+    ui: {
+      title: '2. UI (77%)',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBvpvJbjB6QEk1gMhlhr4ZO0b4dILl7qEYE6-wbfUFGM0tqf3o46BqSi3jApNnsYcQfArHqyEX44s-QBle73AZEl_daFLSfh-IB9PTI6LzM5jXqh_PIgsY8V0oIBqUmyPQ64Qv9EA2Irc9yFoLdBYL4LTAtT1Kh6yp_Ij2NOOKxJJH4KGnmnCwcNvK75FJmRC_6PsiJNodMd_bqIbjnHIIkQAHR63C0LupwG6mF9vd33N75KupYevjWQUUoZFwOVfdb',
+      inst: 'IIT Roorkee',
+      roll: 'Roll: NPTEL26AR15S663400201',
+      summary: 'User Interface Design — Elite Certified by IIT Roorkee, Final Score: 77%.'
+    },
+    microsoft: {
+      title: '3. Microsoft',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDzkqVpxybf9Stgl5whxlKxbxLwGbkNiV-uyc_qarcV-zZ8FSoIitQ4Ni-icPc6FswS9f6JRR8KWiOrhTjZaP9Zq5I_jxHbs-9ebTHADitCSoVLSM5KkFMITHsmhIn2lG9gvU1d_KHkmUvqKmvtkg4C3iFu5nsqTlj7RFNFvBMGVNLTMPz4rzmZKt_T7TXbNHqGnCxMJqMhyTmDyKCygBN0IhDFKPHToMCQFd-rhOC_nci_LWkEKEt6cyWWLS_Xh6jrvw',
+      inst: 'Microsoft & Coursera',
+      roll: 'Verify: coursera.org/verify/PREFY24VH7QO',
+      summary: 'Fundamentals of UI/UX Design — An online course authorized by Microsoft and offered through Coursera. Completed Feb 23, 2026.'
+    },
+    simplilearn: {
+      title: '4. Simplilearn',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAd2is7wVWLRuZaoDxQKY6cFdW-wd3XTSH023UXILMPbg_onq0JnKTrWW2Fu_tPh8Y_0ItVKSd272wLcG6af3ZwI3qNNmQyvqXQ4qgOjnJ-IczodslB3uujKU_saZOTLIQOS2_hqYTSec8X1ZNrm6uWo2-kjlucjp5girUzoVtX_V-rEgylhTAyKh4aNFmai39KYY81wc9r8qxqT-WAQk3oXE4RhlSbaTVdlzZqGvl-Tch6qQ3pevHqZbGKBsSb6DMUdQ',
+      inst: 'Simplilearn SkillUp',
+      roll: 'Certificate Code: 9616590',
+      summary: 'Introduction to Graphic Design; Basics of UI/UX — Completed December 21, 2025 (CEO Krishna Kumar).'
+    },
+    genlab: {
+      title: 'GenLab',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCHmj3mWV4EXh9yuYHpS23T8mjcMESGjsDK31hQ2vRSAt6KvJAldqGFgZFITE1iuSpv5jHhncENd6CgoRcHwS2RG-fpUr5zqDHwSCsrRfoLCyfeTUnCQAP_dvg4pPm4-gc-jaTRLyrviV-0ubhRR-166WYLmacPX85Z2ni0FX6bG_bNCxuyf-hAHb_xc0gQOrKF0ceTYcRIxJjwqNqH_ne9WFA2wddF6w3v1WgjVaXuEIy0I9khV-MhC4Xdt1OYL9W7sg',
+      inst: 'GenLab Pvt. Ltd.',
+      roll: 'ID: GL/INT/26/19',
+      summary: 'UI/UX Design Internship Certificate of Completion (Apr 14 – Apr 28, 2026).'
+    },
+    tvk: {
+      title: 'TVK Tech',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAeiut2Mi2VIy43SOMMAeuUgVpInUuQe2CM7c7XcR6xgcBBcXZPCi-dxh2bPpGujlN8l_YPZ8pO5VODTiDFZFA7h4UERoivYe-DrO_5zxdwEiLjcQVa3kJfF8TykpeUzhcvln6QB6oocYMWQgJDA6u_gjwn0l2iW1Mg9ZYuDFZd5bR0x7nZg5kdlP0svc7qtdJV4r6mW5HCtiduADYDiQjX7CKhLjT-kyW7W0JWE6HUxaNL4Jv7ATsRg85bfQqSuH5u8g',
+      inst: 'TVK Technologies',
+      roll: 'Reg No: 731123105007',
+      summary: 'Internship Completion Letter for Full Stack Development on "Mental Health Analysis".'
+    }
+  };
+
+  let activeCertKey = 'hci';
+  function switchCertTab(key) {
+    activeCertKey = key;
+    const tabContainer = document.getElementById('cert-modal-tabs');
+    tabContainer.querySelectorAll('button').forEach(btn => {
+      if (btn.id === `tab-btn-${key}`) {
+        btn.className = 'px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-400 text-slate-900 whitespace-nowrap shadow-sm';
+      } else {
+        btn.className = 'px-3 py-1.5 rounded-xl text-xs font-medium text-slate-300 light-text-sub whitespace-nowrap';
+      }
+    });
+    const d = certData[key];
+    if (d) {
+      document.getElementById('cert-display-img').src = d.img;
+      document.getElementById('cert-institute').textContent = d.inst;
+      document.getElementById('cert-roll').textContent = d.roll;
+      document.getElementById('cert-summary').textContent = d.summary;
+    }
+  }
+
+  function openCertModal(key) {
+    switchCertTab(key);
+    document.getElementById('cert-modal').classList.remove('hidden');
+    document.getElementById('cert-modal').classList.add('flex');
+  }
+  function closeCertModal() {
+    document.getElementById('cert-modal').classList.add('hidden');
+    document.getElementById('cert-modal').classList.remove('flex');
+  }
+
+  // 7. ADMIN AUTH & CMS LOGIC
+  let isAdmin = false;
+  function handleAdminTrigger() {
+    if (isAdmin) {
+      toggleCMSPanel();
+    } else {
+      document.getElementById('admin-modal').classList.remove('hidden');
+      document.getElementById('admin-modal').classList.add('flex');
+      document.getElementById('admin-error-msg').classList.add('hidden');
+    }
+  }
+  function closeAdminModal() {
+    document.getElementById('admin-modal').classList.add('hidden');
+    document.getElementById('admin-modal').classList.remove('flex');
+  }
+  function submitAdminLogin() {
+    const u = document.getElementById('admin-user-input').value.trim();
+    const p = document.getElementById('admin-pass-input').value.trim();
+    if (u === 'bala@1234' && p === 'hogan@1234') {
+      isAdmin = true;
+      closeAdminModal();
+      const btn = document.getElementById('admin-trigger-btn');
+      btn.className = 'h-9 px-3 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm';
+      document.getElementById('admin-icon').textContent = 'edit_note';
+      document.getElementById('admin-label').textContent = 'CMS Active';
+      toggleCMSPanel();
+      showToast("Authenticated as Bala Shree M");
+    } else {
+      document.getElementById('admin-error-msg').classList.remove('hidden');
+    }
+  }
+  function toggleCMSPanel() {
+    const panel = document.getElementById('cms-panel');
+    panel.classList.toggle('hidden');
+    panel.classList.toggle('flex');
+  }
+  function logoutAdmin() {
+    isAdmin = false;
+    toggleCMSPanel();
+    const btn = document.getElementById('admin-trigger-btn');
+    btn.className = 'h-9 px-3 rounded-xl bg-purple-950/40 border border-purple-500/40 text-purple-200 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm';
+    document.getElementById('admin-icon').textContent = 'lock';
+    document.getElementById('admin-label').textContent = 'CMS';
+    showToast("Logged out of Admin Studio");
+  }
+
+  function switchCMSTab(num) {
+    for (let i = 1; i <= 5; i++) {
+      const btn = document.getElementById(`cms-btn-${i}`);
+      const pane = document.getElementById(`cms-pane-${i}`);
+      if (i === num) {
+        btn.className = 'px-2.5 py-1.5 rounded-lg text-xs font-semibold bg-purple-600 text-white whitespace-nowrap';
+        pane.classList.remove('hidden');
+        pane.classList.add('flex');
+      } else {
+        btn.className = 'px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-300 whitespace-nowrap';
+        pane.classList.add('hidden');
+        pane.classList.remove('flex');
+      }
+    }
+  }
+
+  function applyHeroCMS() {
+    const n = document.getElementById('cms-name').value;
+    const r = document.getElementById('cms-role').value;
+    const b = document.getElementById('cms-bio').value;
+
+    document.getElementById('nav-brand-name').textContent = n;
+    document.getElementById('display-name').innerHTML = buildNameKineticHtml(n, 0.30, 0.08);
+    document.getElementById('display-role').innerHTML = buildKineticWordsHtml(r, 0.50, 0.04);
+    document.getElementById('display-bio').innerHTML = buildKineticWordsHtml(b, 0.60, 0.03);
+  }
+
+  function launchPrototype() {
+    window.open("https://embed.figma.com/proto/cYkbl8N1molzjjULAC2lBk/Untitled?node-id=252-380&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=163%3A188&embed-host=share", '_blank');
+  }
+</script>
+</body></html>
